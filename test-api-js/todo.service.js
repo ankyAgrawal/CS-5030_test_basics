@@ -36,7 +36,7 @@ class todoservice{
     });
     }
 
-    delete_todo(id){
+    delete_todo(req){
         // Your code here
         const id = req.params.id
     const todo = todos[0]
@@ -51,6 +51,9 @@ class todoservice{
 
     update_todo(id, todo){
         // Your code here
+        const { id, item, completed } = req.body;
+        const todoUpdate = todos.todo.find((todo) => todo.id == id);
+        todo.complete = true;
     }
 }
 
