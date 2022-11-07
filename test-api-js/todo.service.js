@@ -51,6 +51,9 @@ class todoservice{
 
     update_todo(id, todo){
         // Your code here
+        const { id, item, completed } = req.body;
+        const todoUpdate = todos.todo.find((todo) => todo.id == id);
+        todo.complete = true;
     }
 }
 
