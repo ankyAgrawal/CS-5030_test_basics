@@ -14,6 +14,7 @@ describe("todo api test suite", () => {
                         
                         return done();
                     })
+                });
     test("POST /",(done)=>{
         request(app).post("/todoadd")
                     .expect('Content-Type', /json/)
@@ -24,6 +25,7 @@ describe("todo api test suite", () => {
                                         
                          return done();
              })
+            });
 
     test("PUT /",(done)=>{
         request(app).put("/todoupdate")
@@ -33,8 +35,8 @@ describe("todo api test suite", () => {
                         if(err) return done(err);
                                 
                         return done();
-             })
-            });
+        })
+    });
 
              test("DELETE /",(done)=>{
                 request(app).delete("/tododelete")
@@ -46,20 +48,4 @@ describe("todo api test suite", () => {
                                 return done();
                      })
         });
-                });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
-});
+    });
