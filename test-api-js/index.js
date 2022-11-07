@@ -17,6 +17,25 @@ app.post('/todolist', function (req, res) {
   res.json(todo_service.get_todos());
 })
 
+app.post('/todoadd', function (req, res) {
+  // console.log('API called with GET:' + req.url);
+  let todo_service = new todoservice();
+  res.json(todo_service.add_todo());
+})
+
+app.put('/todoupdate', function (req, res) {
+  // console.log('API called with GET:' + req.url);
+  let todo_service = new todoservice();
+  res.json(todo_service.update_todos());
+})
+
+app.post('/tododelete', function (req, res) {
+  // console.log('API called with GET:' + req.url);
+  let todo_service = new todoservice();
+  res.json(todo_service.delete_todos());
+})
+
+
 // Add more api calls here for each requirement
 
 // app.listen(3000, function () {
