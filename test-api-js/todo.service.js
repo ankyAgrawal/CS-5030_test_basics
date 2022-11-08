@@ -23,15 +23,26 @@ class todoservice{
     }
 
     add_todo(todo){
-        // Your code here
+        console.log("Adding New Todo List....");
+        this.todo_data.todo.push(todo);
+    }   
+
+    delete_todo(title){
+        console.log("Deleting the list matching the Title.");
+        const CurrentItem = this.todo_data.todo.findIndex((index)=>index.title == title)
+        this.todo_data.todo.splice(CurrentItem,1)
     }
 
-    delete_todo(id){
-        // Your code here
-    }
-
-    update_todo(id, todo){
-        // Your code here
+    update_todo(title, todo){
+        console.log("Updating the existing index...");
+        const CurrentItem = this.todo_data.todo.findIndex((index)=>index.title === title)
+        this.todo_data.todo.splice(CurrentItem,1,todo)
+             
+        var res= this.todo_data.todo.find(obj =>{
+            return obj.title === "New Updated";
+        });
+        return res;
+    
     }
 }
 
