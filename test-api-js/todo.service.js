@@ -5,11 +5,11 @@ class todoservice{
             "description": "D1",
             "done": false
         },{
-            "title": "T1",
+            "title": "T2",
             "description": "D1",
             "done": false
         },{
-            "title": "T1",
+            "title": "T3",
             "description": "D1",
             "done": false
         }]
@@ -24,6 +24,8 @@ class todoservice{
 
     add_todo(todo){
         // Your code here
+        this.todo_data.todo.push(todo);
+        return this.todos;
     }
 
     delete_todo(id){
@@ -35,5 +37,12 @@ class todoservice{
     }
 }
 
+t = new todoservice()
+t.add_todo({
+    "title": "T4",
+    "description": "D4",
+    "done": false
+});
+console.log(t.todo_data.todo)
 
 module.exports= todoservice;
