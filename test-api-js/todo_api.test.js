@@ -22,10 +22,11 @@ describe("todo api test suite", () => {
                          if(err) return done(err);            
                          return done();
              })
-            });
+    });
 
     test("PUT /",(done)=>{
         request(app).put("/todoupdate")
+                    .expect(200)
                     .end((err, res)=>{
                         if(err) return done(err);
                         // expect(res.status).toBe(200)        
@@ -35,6 +36,7 @@ describe("todo api test suite", () => {
 
     test("DELETE /",(done)=>{
         request(app).delete("/tododelete")
+        .expect(200)
             .end((err, res)=>{
                 if(err) return done(err);    
                 return done();

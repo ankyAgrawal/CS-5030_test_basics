@@ -11,12 +11,6 @@ app.get('/todolist', function (req, res) {
   res.json(todo_service.get_todos());
 })
 
-app.post('/todolist', function (req, res) {
-  // console.log('API called with GET:' + req.url);
-  let todo_service = new todoservice();
-  res.json(todo_service.get_todos());
-})
-
 app.post('/todoadd', function (req, res) {
   // console.log('API called with GET:' + req.url);
   let todo_service = new todoservice();
@@ -24,15 +18,15 @@ app.post('/todoadd', function (req, res) {
 })
 
 app.put('/todoupdate', function (req, res) {
-  // console.log('API called with GET:' + req.url);
+  console.log('API called with PUT:' + req.url);
   let todo_service = new todoservice();
-  res.json(todo_service.update_todos());
+  res.json(todo_service.update_todo());
 })
 
 app.delete('/tododelete', function (req, res) {
-  // console.log('API called with GET:' + req.url);
+  console.log('API called with DELETE:' + req.url);
   let todo_service = new todoservice();
-  res.json(todo_service.delete_todos());
+  res.json(todo_service.delete_todo());
 })
 
 
