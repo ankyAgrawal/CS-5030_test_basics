@@ -30,24 +30,17 @@ class todoservice{
       completed,
     };
     todos.push(newTodo);
-    return res.status(201).json({
-      data: todos,
-      error: null,
-    });
+    return this.todos;
     }
 
     delete_todo(req){
-        // Your code here
-        const id = req.params.id
-    const todo = todos[0]
-    if(todo) {
-      todos.splice(id, 1)
-    }
-    return res.status(200).json({
-      data: todos,
-      error: null,
-        });
-    }
+        console.log("in delete")
+      this.todo_data.todo.splice(1, 1)
+      return res.status(200).json({
+        data: todos,
+        error: null,
+      });
+}
 
     update_todo(req, todo){
         // Your code here
