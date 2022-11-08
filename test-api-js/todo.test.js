@@ -21,7 +21,35 @@ describe('todo test suite', () => {
 
     
 
-    // Write all your test cases here that corresponds to software requirements
+    function del(b){
+  console.log("Button", b)
+  b.parentElement.remove()
+}
+
+<ul>
+  <li>1 <button onclick="delete(this)">Delete</button></li>
+  <li>2 <button onclick="delete(this)">Delete</button></li>
+<ul>
+
+ function add(c){
+  console.log("Add", c)
+  c.parentElement.add()
+}
+
+<ul>
+  <li>1 <button onclick="add(this)">Add</button></li>
+  <li>2 <button onclick="add(this)">Add</button></li>
+<ul>
+
+function update(a){
+  console.log("Update", a)
+  a.parentElement.update()
+}
+
+<ul>
+  <li>1 <button onclick="update(this)">Update</button></li>
+  <li>2 <button onclick="update(this)">Update</button></li>
+<ul>
 
 
 });
