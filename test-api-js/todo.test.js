@@ -29,5 +29,10 @@ describe('todo test suite', () => {
         //equating the total length
         expect(todo_service.get_todos().todo.length).toEqual(5);
     });
+    test("delete_todo", () => {
+        todo_service.delete_todo(2);
+        //After deleting one item the total length have been updated.
+        expect(todo_service.get_todos().todo.length).toEqual(4);
+    });
 
 });
