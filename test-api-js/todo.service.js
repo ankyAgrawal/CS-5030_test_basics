@@ -1,16 +1,19 @@
 class todoservice{
     todo_data = {
         "todo":[{
-            "title": "T1",
-            "description": "D1",
+            "id":1,
+            "title": "Task1",
+            "description": "buy milk",
             "done": false
         },{
-            "title": "T1",
-            "description": "D1",
+            "id":2,
+            "title": "Task2",
+            "description": "turn off bed room lights",
             "done": false
         },{
-            "title": "T1",
-            "description": "D1",
+            "id":3,
+            "title": "Task3",
+            "description": "polish the shoe",
             "done": false
         }]
     }
@@ -18,18 +21,29 @@ class todoservice{
         this.todos=this.todo_data;
     }
 
+    //GET
     get_todos(){
         return this.todos;
     }
 
-    add_todo(todo){
-        // Your code here
+    // Your code here
+
+    //POST
+    add_todo(request){
+        app.post('/', (request, response) => {
+            var newTodo = request.get_todos;
+            newTodo.id = todos.length +1;
+            todos.push(newTodo);
+            response.status(201).json(newTodo);
+          });
     }
 
+    //DELETE
     delete_todo(id){
         // Your code here
     }
 
+    //UPDATE
     update_todo(id, todo){
         // Your code here
     }
