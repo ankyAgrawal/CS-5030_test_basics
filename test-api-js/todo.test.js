@@ -34,5 +34,12 @@ describe('todo test suite', () => {
         //After deleting one item the total length have been updated.
         expect(todo_service.get_todos().todo.length).toEqual(4);
     });
+    test("update_todo", () => {
+        //updating existing todo list
+        todo_service.update_todo(1, {"id": 1, "title": "first", "completed": false});
+        const index = todo_service.get_todos().todo.findIndex((obj) => obj.id === 1);
+        // then pointing length to the last list we added.
+        expect(todo_service.get_todos().todo[index].title).toEqual("first");
+    });
 
 });
