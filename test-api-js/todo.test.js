@@ -22,6 +22,12 @@ describe('todo test suite', () => {
     
 
     // Write all your test cases here that corresponds to software requirements
-
+    test("add_todo", () => {
+        //adding two todo list
+        todo_service.add_todo({"id": 1, "title": "one", "completed": false});
+        todo_service.add_todo({"id": 2, "title": "second", "completed": false});
+        //equating the total length
+        expect(todo_service.get_todos().todo.length).toEqual(5);
+    });
 
 });
