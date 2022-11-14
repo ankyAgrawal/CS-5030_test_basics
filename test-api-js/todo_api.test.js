@@ -14,5 +14,32 @@ describe("todo api test suite", () => {
                         
                         return done();
                     })
-});
+                });
+    test("POST /",(done)=>{
+        request(app).post("/todoadd")
+                    .end((err, res)=>{
+                       // expect(res.status).toBe(200)
+                         if(err) return done(err);            
+                         return done();
+             })
+    });
+
+    test("PUT /",(done)=>{
+        request(app).put("/todoupdate")
+                    .expect(200)
+                    .end((err, res)=>{
+                        if(err) return done(err);
+                        // expect(res.status).toBe(200)        
+                        return done();
+        })
+    });
+
+    test("DELETE /",(done)=>{
+        request(app).delete("/tododelete")
+        .expect(200)
+            .end((err, res)=>{
+                if(err) return done(err);    
+                return done();
+        })
+    });
 });
