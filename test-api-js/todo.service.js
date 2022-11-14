@@ -5,11 +5,11 @@ class todoservice{
             "description": "D1",
             "done": false
         },{
-            "title": "T1",
+            "title": "T2",
             "description": "D1",
             "done": false
         },{
-            "title": "T1",
+            "title": "T3",
             "description": "D1",
             "done": false
         }]
@@ -23,15 +23,27 @@ class todoservice{
     }
 
     add_todo(todo){
-        // Your code here
+        const { id, item, completed } = req.body;
+    const newTodo = {
+      id,
+      item,
+      completed,
+    };
+    todos.push(newTodo);
+    return this.todos;
     }
 
-    delete_todo(id){
-        // Your code here
-    }
+    delete_todo(req){
+        console.log("in delete")
+      this.todo_data.todo.splice(1, 1)
+      return this.todos
+      
+}
 
-    update_todo(id, todo){
-        // Your code here
+    update_todo(){
+        const todoUpdate = this.todos.todo.find((map) => map.title == "T2");
+        todoUpdate.description = "update description";
+        return this.todos.todo;
     }
 }
 
